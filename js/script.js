@@ -31,6 +31,6 @@ function loading() {
 
 window.addEventListener("load", setTimeout(() => {
     number = prompt('Im wyższy numer, tym dłużej będzie trwać aktualizacja\ndefault: 10000', number)
-    window.requestFullscreen()
+    mid.requestFullscreen();
     loading()
 }, 1000));
