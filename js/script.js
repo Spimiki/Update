@@ -5,7 +5,7 @@ let percent = 0;
 
 midtxt.innerHTML = `Working on update ${percent}% complete. <br> Don't turn off your PC. This will take a while.`
 
-function loading() {
+function loading(number) {
     let x = Math.random();
     let time = x * number;
     if (percent != 100) {
@@ -34,5 +34,5 @@ window.addEventListener("load", setTimeout(() => {
     if (number > 100000000) {
         number = 100000000
     }
-    loading()
+    loading(number)
 }, 1000));
