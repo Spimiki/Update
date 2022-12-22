@@ -5,9 +5,6 @@ let percent = 0;
 
 midtxt.innerHTML = `Working on update ${percent}% complete. <br> Don't turn off your PC. This will take a while.`
 
-
-let number = 10000
-
 function loading() {
     let x = Math.random();
     let time = x * number;
@@ -30,7 +27,12 @@ function loading() {
 };
 
 window.addEventListener("load", setTimeout(() => {
-    number = prompt('Im wyższy numer, tym dłużej będzie trwać aktualizacja\ndefault: 10000', number)
-    mid.requestFullscreen();
+    let number = prompt('Enter number between 100 and 100000000.\nHigher number = longer update screen', 10000)
+    if (number < 100) {
+        number = 100
+    }
+    if (number > 100000000) {
+        number = 100000000
+    }
     loading()
 }, 1000));
