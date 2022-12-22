@@ -32,9 +32,9 @@ window.addEventListener("load", setTimeout(() => {
     number = prompt('Enter number between 100 and 100000000.\nHigher number = longer update screen', 10000)
     if (number < 100) {
         number = 100
-    }
+    };
     if (number > 100000000) {
         number = 100000000
-    }
+    };
     loading()
 }, 1000));
