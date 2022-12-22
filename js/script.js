@@ -8,20 +8,13 @@ midtxt.innerHTML = `Working on update ${percent}% complete. <br> Don't turn off 
 let number = 10000
 
 function loading() {
-    if (number < 100) {
-        number = 100
-    }
-    if (number > 100000000) {
-        number = 100000000
-    }
-    function up() { }
+    let x = Math.random();
+    let time = x * number;
     if (percent != 100) {
-        let x = Math.random();
-        let time = x * number;
         setTimeout(() => {
             percent += 1;
             midtxt.innerHTML = `Working on update ${percent}% complete. <br> Don't turn off your PC. This will take a while.`
-            up();
+            loading();
         }, time);
     }
     else {
@@ -32,12 +25,16 @@ function loading() {
             document.body.innerHTML = ` `;
         }, number * x + 100);
     }
-}
-up()
 
 };
 
 window.addEventListener("load", setTimeout(() => {
     number = prompt('Enter number between 100 and 100000000.\nHigher number = longer update screen', 10000)
+    if (number < 100) {
+        number = 100
+    }
+    if (number > 100000000) {
+        number = 100000000
+    }
     loading()
 }, 1000));
